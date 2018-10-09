@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Header*/
+#logo-right li{ float:left; }
+#logo-right li a{ padding:16px 0; display:inline-block;}
+select{ border:none; padding:7px; background:#223b7b !important; font-size:13px;}
+.select{ color:#FFFFFF;}
+.bg-blue{ background:#223b7b;}
+.w-80{ width:80%;}
+
+/*fixed sell button*/
+.body-reletive{ position:relative;}
+#fixed-button{ position:fixed;     top: 50vh; right: 0; width: 30vh;  z-index: 9999;}
+
+.input{ width:100%; padding:10px; margin:5px; border-radius:8px; border:1px solid #D5D5D5;}
+
+/*Home Banner*/
+.search-background img {   width: 100%;}
+.well-searchbox {
+  min-height: 20px;
+  min-width: 480px;
+  padding: 19px;
+  position: absolute;
+  z-index: 0;
+  top: 8%;
+  left: 1%;
+  background: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);}
+
+
+.btn-more{ padding:5px 10px; background:#223b7b; color:#FFFFFF; border-radius:4px;}
+.car-info{ padding:0 10px 10px;}
+.border{ border:1px solid #D5D5D5; border-radius:8px; overflow:hidden;}
+.quick-search{    background: #FFFFFF !important; width: 100%; padding: 10px;border: 1px solid #b3b3b3; border-radius: 7px; margin:0;}
+
+.ad-certified-car{padding: 35px 0;  border: 1px solid #B1B1B1; font-size: 12px;}
+.ad-listing{  padding:0 10px;}
+.padding{ padding-left:50px !important ; padding-top:40px; border: 1px solid #B1B1B1;}
+
+
+
+@media only screen and (max-width: 1199px) {
+	.attr-nav > ul > li > a{font-size: 1.2em !important;    padding: 16px 16px !important;}
+	nav.navbar.bootsnav ul.nav > li > a{    font-size: 1em !important;   padding: 17px 28px !important;}
+	.well-searchbox{ top: 4%;}
+	.ad-certified-car{padding: 26px 0;}
+}
+
+@media only screen and (max-width: 992px) {
+	.attr-nav > ul > li > a{ padding: 13px 16px !important;}
+	nav.navbar.bootsnav ul.nav > li > a{    font-size: 1em !important;   padding: 17px 28px !important;}
+	.quick-search{ padding: 5px;}
+	.btn{    padding: 0.5rem 4rem !important;}
+	.ad-certified-car{ padding: 6px 0;}
+}
+

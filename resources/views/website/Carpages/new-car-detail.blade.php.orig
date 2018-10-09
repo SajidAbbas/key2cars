@@ -1,0 +1,801 @@
+<<<<<<< working copy
+@extends('websiteMasterView')
+
+@section('title')
+New Car for Sale in Pakistan   | Key2Cars
+@endsection
+
+
+
+
+@section('cssblock')
+   <!--Google Font link-->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/ribbon.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/iconfont.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/bootsnav.css')}}">
+
+        <!-- index css -->
+        
+        <link rel="stylesheet" href="{{URL::asset('assets/car/css/style.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/car/css/bootstrap.css')}}">
+
+
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
+        <!--<link rel="stylesheet" href="assets/css/colors/maron.css">-->
+
+        <!--Theme Responsive css-->
+        
+        <!-- JS includes -->
+
+        <script src="{{URL::asset('assets/js/vendor/jquery-1.11.2.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/vendor/bootstrap.min.js')}}"></script>
+
+        
+        <script src="{{URL::asset('assets/js/bootsnav.js')}}"></script>
+
+
+
+        <script src="{{URL::asset('assets/js/plugins.js')}}"></script>
+        <script src="{{URL::asset('assets/js/main.js')}}"></script>
+
+    
+
+    <link href="{{URL::asset('assets/car/css/custom.css')}}" media="screen" rel="stylesheet" type="text/css" />
+<!-- Font Awesome -->
+ 
+  <link href="{{URL::asset('assets/car/css/fonts-base64-woff-526e95592dcd6c550525b4d98d7d2546.css')}}" media="screen" rel="stylesheet" type="text/css" />
+
+
+    <script src="{{URL::asset('assets/car/js/top_javascript-4c1cf070410b188168ccc1759df8f669.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('assets/car/js/index_used_cars.js')}}" type="text/javascript"></script>
+
+  
+  @endsection
+  
+  @section('content')
+  
+
+<div class="mt10" id="main-container"> <span itemscope="" itemtype="http://schema.org/Car">
+  <section>
+      @foreach($data as $d)
+    <div class="container"> <span style="display:none;" itemprop="name">{{$d->title}}</span>
+      <h1 class="mt10">{{$d->title}} Overview &amp; Price</h1>
+      <div class="well p40 mb40">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="col-md-9 nopad"> <span>
+              <label class="generic-green mb5">PKR <strong class="fs22">{{$d->price}}</strong></label>
+              </span> <br>
+<a href="/new-cars/on-road-price?version=vx-euro-ii" class="btn btn-link-outline fs12" onclick="trackEvents('OnRoadPrice', 'From - Version', 'Suzuki Mehran VX Euro II');">Get On Road Price</a>
+              <div class="mt30 mb30 text-center"> <a href="javascript:void;" data-target="#dibModal" data-toggle="modal" class="btn btn-primary btn-block fs12" onclick="trackEvents('CarFinance','GetThisCarFinanced', 'From - VersionPage');">GET THIS CAR FINANCED</a> </div>
+              <div id="dibModal" class="modal text-left" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog dib-model">
+                  <div class="modal-content" id="modal-content">
+                    <form accept-charset="UTF-8" action="/car-loan-calculator/new-car/detail/" class="form-horizontal nomargin" id="car-finance-lead" method="get">
+                      <div style="margin:0;padding:0;display:inline">
+                        <input name="utf8" type="hidden" value="✓">
+                      </div>
+                      <input id="authenticity_token" name="authenticity_token" type="hidden" value="Lor7xDTfYnlcMkq5N0ntOTsa07ap/+EXU0hyZRE5WDo=">
+                      <input id="check_for_newsletter" name="check_for_newsletter" type="hidden" value="">
+                      <div class="modal-body" style="max-height: none;">
+                        <button type="button" class="close close-lg" data-dismiss="modal" aria-hidden="true"></button>
+                        
+                        
+                       
+                      </div>
+                    </form>
+                    <script>
+
+
+    $(document).ready(function(){
+        $('#finance-lead-details-btns').hide();
+    });
+
+        $('#city_for_finance').on('change',function(){
+            $('#car_finance_lead_city').val($(this).val());
+            $('#finance-lead-details-btns').show();
+        });
+        $('#city_for_finance, #version').on('change',function(){
+            showOrHideFinanceControls();
+            $('#finance-lead-details-btns').show();
+        });
+        $('#version').on('change',function(){
+            $('#car_finance_lead_version_id').val($(this).val())
+            //$('#finance-lead-details-btns').hide();
+        });
+
+        showOrHideFinanceControls();
+        function showOrHideFinanceControls(){
+            if ($('#city_for_finance').val() && $('#version').val()){
+               $('#finance-calc-and-controls, div.apply-finance-actions').show();
+                $('#finance-lead-details-btns').show();
+                }
+            else {
+                $('#finance-calc-and-controls, div.apply-finance-actions').hide();
+            }
+        }
+
+
+
+    $('form#car-finance-lead').on('change',function(){
+        if ( $('.finance-sliders').is(':visible') ){
+            $.ajax({
+                url: $(this).attr('action'),
+                data: $(this).serialize() + '&format=js' + '&ga_label=From - VersionPage', // serializes the form's elements.
+                dataType: 'script',
+                success: function(data){ eval(data);}
+            });
+        }
+    });
+
+    $('button#submit-finance-lead').on('click',function(){
+        var form = $(this).closest('form');
+        if ( $(form).parsley().validate() ){
+            $(form).attr('action','/car-loan-calculator/').attr('method','post')
+                trackEvents('CarFinance','FormSubmitDone', 'From - VersionPage');
+        }
+    });
+
+    $('button.apply-finance').on('click',function(e){
+        e.preventDefault();
+        $('#car_finance_lead_car_loan_id').val($(this).data('loanId'));
+        $('div#finance-contact-details, div#submit-finance-lead-btns').show();
+        $('div#finance-newcar-dropdowns, div.finance-sliders, div#finance-lead-details-btns').hide();
+    });
+
+    $('a#change-finance-details').on('click',function(e){
+        e.preventDefault();
+        $('div#finance-newcar-dropdowns, div.finance-sliders, div#finance-lead-details-btns').show();
+        $('div#finance-contact-details, div#submit-finance-lead-btns').hide();
+    });
+
+</script> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix" style="clear:both;"> <span class="rating generic-orange fs12 " id="review-Version"> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </span> </div>
+            <div class="mb10 fs12"> <a href="/new-cars/suzuki/mehran/reviews/" id="reviewcount_vx-euro-ii">110 Reviews</a> | <a href="/new-cars/reviews/new/?ManID=41&amp;ModelID=62&amp;VersionID=640" class="ga-Version-write-review" ga-label="vx-euro-ii">Write a Review</a> </div>
+          </div>
+          <div class="col-md-8 vehicle-intro generation-slider pos-rel">
+                            
+              <div id="content-slider" class="clr">
+		<div class="wrap-slider clr">	
+		<br>
+		
+<!-- 	========================Thumbnail ControlNav======================================    -->	
+                 <?php $count =1;?>
+                    @foreach($images as $img)
+			<input type="radio" id="a-{{$count++}}" name="a" >	
+                        @endforeach
+			
+			
+			<nav id="main">
+                <?php $count =1;?>
+                    @foreach($images as $img)
+                        <label for="a-{{$count++}}" class="first"></label>
+                    @endforeach
+         
+         
+			</nav>
+<!-- 	==============================================================    -->
+			<nav id="control">
+                            <?php $count =1;?>
+                    @foreach($images as $img)
+                           <label for="a-{{$count++}}" ></label>
+                    @endforeach
+         
+			</nav>
+<!-- 	==============================================================    -->
+
+				<!-- 	IMAGE NAVIGATION pic -->
+                                 <?php $count =1;$index=10;?>
+                    @foreach($images as $img)
+			<span id="b-{{$count}}" class="th" tabindex="{{$index++}}">
+				<img src="{{URL::asset('images'.$img->url )}}" alt="" id="p-{{$count++}}">
+				
+			</span>
+                    @endforeach
+
+			
+			
+			<!-- ______________IMAGES_________________________________________ -->						
+
+			<div class="slider">
+				<div class="inset">
+                                    <?php $count =1;?>
+                                          @foreach($images as $img)
+
+					<figure>
+					  
+						<img src="{{URL::asset('images'.$img->url) }}" alt="" id="i-{{$count++}}" class="f">						
+					</figure>
+
+					@endforeach				
+				</div>
+			</div>					
+
+		</div>		
+	</div>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="container">
+      <h2>Colors</h2>
+      <div class="well">
+       <?php echo $d->colors;?>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 version-specifications">
+          <h2>Specifications</h2>
+          <?php echo $d->specification;?>
+         
+        </div>
+        <div class="col-md-6 version-features">
+          <h2>features</h2>
+          <?php echo $d->features;?>
+          <div class="clearfix"></div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  </span>
+  <section>
+    <div class="container">
+      <h2> Description</h2>
+      <div class="well latest-news blog-enteries">
+       <?php echo $d->description;?>
+      </div>
+      <div class="clear-link"><a href="#" class="more-link" id="morereview_honda" title="Pakistan Automotive Forum Posts">Read all Recent  Discussions</a></div>
+    </div>
+  </section>
+  @endforeach
+  
+</div>
+
+
+
+
+
+@endsection
+
+
+
+@section('jsblock')
+<script>
+    $(function(){
+      var make= $('#UsedManID').val();
+      if (make) {
+        updateModels('car',make, $('#UsedModelID'), 'All Models'); reloadChosen('#UsedModelID');
+        updateVersion('car',$('#UsedModelID').val(), make, $('#UsedVersionID'), 'All Versions');reloadChosen('#UsedVersionID');
+      }
+      $(".search-main").bind('keydown',function(e) {
+        if(e.which === 13 && $(".chzn-single-with-drop").length==0 &&!$("select").is(":focus")) {
+            $('.search-main #used-cars-search-btn').click();
+        }
+      });
+    });
+  </script> 
+<script type="text/javascript">
+    $(function(){
+      if($('#carSliderWrapper #slider').length > 0){
+        var carSlider = $('#carSliderWrapper #slider').bxSlider({
+          infiniteLoop: true,
+          auto: false,
+          autoControls: false,
+          autoHover: true,
+          speed:1000,
+          pause: 10000,
+          pager:false,
+          nextSelector: '.slider-next',
+          prevSelector: '.slider-prev',
+          nextText: '<i class="fa fa-chevron-right"></i>',
+          prevText: '<i class="fa fa-chevron-left"></i>',
+          onSlideBefore: function(slide){
+              lazyLoadSliderImages(slide,'.lazy-car-slider')
+          }
+        });
+        var first_slide_images = carSlider.getCurrentSlideElement().find('.lazy-car-slider')
+        applyImagesLazyLoad(first_slide_images);
+      }
+    });
+  </script> 
+<script>
+      var fetch_f_ads=true;
+      $(function(){
+        if($('#slider1').length > 0){
+          $('#slider1').bxSlider({
+            auto: false,
+            autoControls: false,
+            autoHover: true,
+            speed:1000,
+            pause: 10000,
+            pager:false,
+            nextSelector: '.slider1-next',
+            prevSelector: '.slider1-prev',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            prevText: '<i class="fa fa-chevron-left"></i>',
+          });
+        }
+      });
+    </script> 
+<script>
+        $(document).ready(function() {
+            $('.bxSlider').each(function(i,slider){
+                $(slider).bxSlider({
+                    infiniteLoop: false,
+                    hideControlOnEnd: true,
+                    auto: false,
+                    autoControls: false,
+                    autoHover: true,
+                    speed: 1000,
+                    pause: 10000,
+                    minSlides: 4,
+                    maxSlides: 4,
+                    pager: false,
+                    nextSelector: $(slider).attr('data-link-next'),
+                    prevSelector: $(slider).attr('data-link-prev'),
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                });
+            });
+            slideShowContent(this);
+            applyImagesLazyLoad();
+        });
+    </script> 
+<script>
+      $('.nav-dropdown-menu').on('mouseover', function() {
+        $(this).parent().addClass('open');
+      });
+      $('.nav-dropdown-menu').on('mouseout', function() {
+        $(this).parent().removeClass('open');
+      });
+      $(document).ready(function (){ $('#navbar_static_top').attr('data-offset-top', $('.advertisement').innerHeight() + $('.header').innerHeight());
+
+      $("#user-menu,#lang-menu").click(function(e){
+        $(this).toggleClass("open");
+          e.stopPropagation();
+      });
+
+      });
+    </script> 
+<script>$(document).on('click', '.panel-heading span.fa-plus', function (e) {
+    var $this = $(this);
+    if (!$this.hasClass('panel-collapse')) {
+        $this.parents('.panel').find('.panel-body').slideUp();
+        $this.addClass('panel-collapse');
+    	$this.removeClass('fa-plus').addClass('fa-minus');
+       
+    } else {
+        $this.parents('.panel').find('.panel-body').slideDown();
+        $this.removeClass('panel-collapse');
+         $this.removeClass('fa-minus').addClass('fa-plus');
+    }
+});</script>
+=======
+@extends('websiteMasterView')
+
+@section('title')
+New Car for Sale in Pakistan   | Key2Cars
+@endsection
+
+
+@section('icons')
+<div class="pull-left" style="margin-left:70px">
+          <ul class="list-inline hidden-sm hidden-xs" id="">
+              <li class=""><a class="car-active" href="{{Route('carIndexPage')}}"></a></li>
+            <li class=""><a class="bike"  href="{{Route('bike')}}"></a></li>
+            <li class=""><a class="truck"  href="{{Route('/trucks')}}"></a></li>
+          <!--  <li class=""><a class="buses"  href="{{Route('/sellBus')}}"></a></li>-->
+            <li class=""><a class="tractor"  href="{{Route('/farms')}}"></a></li>
+            <li class=""><a class="bus"  href="{{Route('/buses')}}"></a></li>
+            <li class=""><a class="accessories"  href="{{Route('/accessory')}}"></a></li>
+            
+          </ul>
+        </div>
+
+
+
+@endsection
+
+@section('cssblock')
+   <!--Google Font link-->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{URL::asset('assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/ribbon.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/iconfont.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/css/bootsnav.css')}}">
+
+        <!-- index css -->
+        
+        <link rel="stylesheet" href="{{URL::asset('assets/car/css/style.css')}}">
+        <link rel="stylesheet" href="{{URL::asset('assets/car/css/bootstrap.css')}}">
+
+
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
+        <!--<link rel="stylesheet" href="assets/css/colors/maron.css">-->
+
+        <!--Theme Responsive css-->
+        
+        <!-- JS includes -->
+
+        <script src="{{URL::asset('assets/js/vendor/jquery-1.11.2.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/vendor/bootstrap.min.js')}}"></script>
+
+        
+        <script src="{{URL::asset('assets/js/bootsnav.js')}}"></script>
+
+
+
+        <script src="{{URL::asset('assets/js/plugins.js')}}"></script>
+        <script src="{{URL::asset('assets/js/main.js')}}"></script>
+
+    
+
+    <link href="{{URL::asset('assets/car/css/custom.css')}}" media="screen" rel="stylesheet" type="text/css" />
+<!-- Font Awesome -->
+ 
+  <link href="{{URL::asset('assets/car/css/fonts-base64-woff-526e95592dcd6c550525b4d98d7d2546.css')}}" media="screen" rel="stylesheet" type="text/css" />
+
+
+    <script src="{{URL::asset('assets/car/js/top_javascript-4c1cf070410b188168ccc1759df8f669.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('assets/car/js/index_used_cars.js')}}" type="text/javascript"></script>
+
+  
+  @endsection
+  
+  @section('content')
+  
+
+<div class="mt10" id="main-container"> <span itemscope="" itemtype="http://schema.org/Car">
+  <section>
+      @foreach($data as $d)
+    <div class="container"> <span style="display:none;" itemprop="name">{{$d->title}}</span>
+      <h1 class="mt10">{{$d->title}} Overview &amp; Price</h1>
+      <div class="well p40 mb40">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="col-md-9 nopad"> <span>
+              <label class="generic-green mb5">PKR <strong class="fs22">{{$d->price}}</strong></label>
+              </span> <a href="/new-cars/on-road-price?version=vx-euro-ii" class="btn btn-link-outline fs12" onclick="trackEvents('OnRoadPrice', 'From - Version', 'Suzuki Mehran VX Euro II');">Get On Road Price</a>
+              <div class="mt30 mb30 text-center"> <a href="javascript:void;" data-target="#dibModal" data-toggle="modal" class="btn btn-primary btn-block fs12" onclick="trackEvents('CarFinance','GetThisCarFinanced', 'From - VersionPage');">GET THIS CAR FINANCED</a> </div>
+              <div id="dibModal" class="modal text-left" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog dib-model">
+                  <div class="modal-content" id="modal-content">
+                    <form accept-charset="UTF-8" action="/car-loan-calculator/new-car/detail/" class="form-horizontal nomargin" id="car-finance-lead" method="get">
+                      <div style="margin:0;padding:0;display:inline">
+                        <input name="utf8" type="hidden" value="✓">
+                      </div>
+                      <input id="authenticity_token" name="authenticity_token" type="hidden" value="Lor7xDTfYnlcMkq5N0ntOTsa07ap/+EXU0hyZRE5WDo=">
+                      <input id="check_for_newsletter" name="check_for_newsletter" type="hidden" value="">
+                      <div class="modal-body" style="max-height: none;">
+                        <button type="button" class="close close-lg" data-dismiss="modal" aria-hidden="true"></button>
+                        
+                        
+                       
+                      </div>
+                    </form>
+                    <script>
+
+
+    $(document).ready(function(){
+        $('#finance-lead-details-btns').hide();
+    });
+
+        $('#city_for_finance').on('change',function(){
+            $('#car_finance_lead_city').val($(this).val());
+            $('#finance-lead-details-btns').show();
+        });
+        $('#city_for_finance, #version').on('change',function(){
+            showOrHideFinanceControls();
+            $('#finance-lead-details-btns').show();
+        });
+        $('#version').on('change',function(){
+            $('#car_finance_lead_version_id').val($(this).val())
+            //$('#finance-lead-details-btns').hide();
+        });
+
+        showOrHideFinanceControls();
+        function showOrHideFinanceControls(){
+            if ($('#city_for_finance').val() && $('#version').val()){
+               $('#finance-calc-and-controls, div.apply-finance-actions').show();
+                $('#finance-lead-details-btns').show();
+                }
+            else {
+                $('#finance-calc-and-controls, div.apply-finance-actions').hide();
+            }
+        }
+
+
+
+    $('form#car-finance-lead').on('change',function(){
+        if ( $('.finance-sliders').is(':visible') ){
+            $.ajax({
+                url: $(this).attr('action'),
+                data: $(this).serialize() + '&format=js' + '&ga_label=From - VersionPage', // serializes the form's elements.
+                dataType: 'script',
+                success: function(data){ eval(data);}
+            });
+        }
+    });
+
+    $('button#submit-finance-lead').on('click',function(){
+        var form = $(this).closest('form');
+        if ( $(form).parsley().validate() ){
+            $(form).attr('action','/car-loan-calculator/').attr('method','post')
+                trackEvents('CarFinance','FormSubmitDone', 'From - VersionPage');
+        }
+    });
+
+    $('button.apply-finance').on('click',function(e){
+        e.preventDefault();
+        $('#car_finance_lead_car_loan_id').val($(this).data('loanId'));
+        $('div#finance-contact-details, div#submit-finance-lead-btns').show();
+        $('div#finance-newcar-dropdowns, div.finance-sliders, div#finance-lead-details-btns').hide();
+    });
+
+    $('a#change-finance-details').on('click',function(e){
+        e.preventDefault();
+        $('div#finance-newcar-dropdowns, div.finance-sliders, div#finance-lead-details-btns').show();
+        $('div#finance-contact-details, div#submit-finance-lead-btns').hide();
+    });
+
+</script> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix" style="clear:both;"> <span class="rating generic-orange fs12 " id="review-Version"> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </span> </div>
+            <div class="mb10 fs12"> <a href="/new-cars/suzuki/mehran/reviews/" id="reviewcount_vx-euro-ii">110 Reviews</a> | <a href="/new-cars/reviews/new/?ManID=41&amp;ModelID=62&amp;VersionID=640" class="ga-Version-write-review" ga-label="vx-euro-ii">Write a Review</a> </div>
+          </div>
+          <div class="col-md-8 vehicle-intro generation-slider pos-rel">
+                            
+              <div id="content-slider" class="clr">
+		<div class="wrap-slider clr">	
+		<br>
+		
+<!-- 	========================Thumbnail ControlNav======================================    -->	
+                 <?php $count =1;?>
+                    @foreach($images as $img)
+			<input type="radio" id="a-{{$count++}}" name="a" >	
+                        @endforeach
+			
+			
+			<nav id="main">
+                <?php $count =1;?>
+                    @foreach($images as $img)
+                        <label for="a-{{$count++}}" class="first"></label>
+                    @endforeach
+         
+         
+			</nav>
+<!-- 	==============================================================    -->
+			<nav id="control">
+                            <?php $count =1;?>
+                    @foreach($images as $img)
+                           <label for="a-{{$count++}}" ></label>
+                    @endforeach
+         
+			</nav>
+<!-- 	==============================================================    -->
+
+				<!-- 	IMAGE NAVIGATION pic -->
+                                 <?php $count =1;$index=10;?>
+                    @foreach($images as $img)
+			<span id="b-{{$count}}" class="th" tabindex="{{$index++}}">
+				<img src="{{URL::asset('images'.$img->url )}}" alt="" id="p-{{$count++}}">
+				
+			</span>
+                    @endforeach
+
+			
+			
+			<!-- ______________IMAGES_________________________________________ -->						
+
+			<div class="slider">
+				<div class="inset">
+                                    <?php $count =1;?>
+                                          @foreach($images as $img)
+
+					<figure>
+					  
+						<img src="{{URL::asset('images'.$img->url) }}" alt="" id="i-{{$count++}}" class="f">						
+					</figure>
+
+					@endforeach				
+				</div>
+			</div>					
+
+		</div>		
+	</div>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="container">
+      <h2>Colors</h2>
+      <div class="well">
+       <?php echo $d->colors;?>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 version-specifications">
+          <h2>Specifications</h2>
+          <?php echo $d->specification;?>
+         
+        </div>
+        <div class="col-md-6 version-features">
+          <h2>features</h2>
+          <?php echo $d->features;?>
+          <div class="clearfix"></div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  </span>
+  <section>
+    <div class="container">
+      <h2> Description</h2>
+      <div class="well latest-news blog-enteries">
+       <?php echo $d->description;?>
+      </div>
+      <div class="clear-link"><a href="#" class="more-link" id="morereview_honda" title="Pakistan Automotive Forum Posts">Read all Recent  Discussions</a></div>
+    </div>
+  </section>
+  @endforeach
+  
+</div>
+
+
+
+
+
+@endsection
+
+
+
+@section('jsblock')
+<script>
+    $(function(){
+      var make= $('#UsedManID').val();
+      if (make) {
+        updateModels('car',make, $('#UsedModelID'), 'All Models'); reloadChosen('#UsedModelID');
+        updateVersion('car',$('#UsedModelID').val(), make, $('#UsedVersionID'), 'All Versions');reloadChosen('#UsedVersionID');
+      }
+      $(".search-main").bind('keydown',function(e) {
+        if(e.which === 13 && $(".chzn-single-with-drop").length==0 &&!$("select").is(":focus")) {
+            $('.search-main #used-cars-search-btn').click();
+        }
+      });
+    });
+  </script> 
+<script type="text/javascript">
+    $(function(){
+      if($('#carSliderWrapper #slider').length > 0){
+        var carSlider = $('#carSliderWrapper #slider').bxSlider({
+          infiniteLoop: true,
+          auto: false,
+          autoControls: false,
+          autoHover: true,
+          speed:1000,
+          pause: 10000,
+          pager:false,
+          nextSelector: '.slider-next',
+          prevSelector: '.slider-prev',
+          nextText: '<i class="fa fa-chevron-right"></i>',
+          prevText: '<i class="fa fa-chevron-left"></i>',
+          onSlideBefore: function(slide){
+              lazyLoadSliderImages(slide,'.lazy-car-slider')
+          }
+        });
+        var first_slide_images = carSlider.getCurrentSlideElement().find('.lazy-car-slider')
+        applyImagesLazyLoad(first_slide_images);
+      }
+    });
+  </script> 
+<script>
+      var fetch_f_ads=true;
+      $(function(){
+        if($('#slider1').length > 0){
+          $('#slider1').bxSlider({
+            auto: false,
+            autoControls: false,
+            autoHover: true,
+            speed:1000,
+            pause: 10000,
+            pager:false,
+            nextSelector: '.slider1-next',
+            prevSelector: '.slider1-prev',
+            nextText: '<i class="fa fa-chevron-right"></i>',
+            prevText: '<i class="fa fa-chevron-left"></i>',
+          });
+        }
+      });
+    </script> 
+<script>
+        $(document).ready(function() {
+            $('.bxSlider').each(function(i,slider){
+                $(slider).bxSlider({
+                    infiniteLoop: false,
+                    hideControlOnEnd: true,
+                    auto: false,
+                    autoControls: false,
+                    autoHover: true,
+                    speed: 1000,
+                    pause: 10000,
+                    minSlides: 4,
+                    maxSlides: 4,
+                    pager: false,
+                    nextSelector: $(slider).attr('data-link-next'),
+                    prevSelector: $(slider).attr('data-link-prev'),
+                    nextText: '<i class="fa fa-chevron-right"></i>',
+                    prevText: '<i class="fa fa-chevron-left"></i>',
+                });
+            });
+            slideShowContent(this);
+            applyImagesLazyLoad();
+        });
+    </script> 
+<script>
+      $('.nav-dropdown-menu').on('mouseover', function() {
+        $(this).parent().addClass('open');
+      });
+      $('.nav-dropdown-menu').on('mouseout', function() {
+        $(this).parent().removeClass('open');
+      });
+      $(document).ready(function (){ $('#navbar_static_top').attr('data-offset-top', $('.advertisement').innerHeight() + $('.header').innerHeight());
+
+      $("#user-menu,#lang-menu").click(function(e){
+        $(this).toggleClass("open");
+          e.stopPropagation();
+      });
+
+      });
+    </script> 
+<script>$(document).on('click', '.panel-heading span.fa-plus', function (e) {
+    var $this = $(this);
+    if (!$this.hasClass('panel-collapse')) {
+        $this.parents('.panel').find('.panel-body').slideUp();
+        $this.addClass('panel-collapse');
+    	$this.removeClass('fa-plus').addClass('fa-minus');
+       
+    } else {
+        $this.parents('.panel').find('.panel-body').slideDown();
+        $this.removeClass('panel-collapse');
+         $this.removeClass('fa-minus').addClass('fa-plus');
+    }
+});</script>
+>>>>>>> merge rev
+@endsection

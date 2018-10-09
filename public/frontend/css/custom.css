@@ -1,0 +1,257 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Header*/
+#logo-right li{ float:left; }
+#logo-right li a{ padding:16px 0; display:inline-block;}
+#select{ border:none; padding:4px; background:#223b7b !important; font-size:13px;}
+.select{ color:#FFFFFF;}
+.bg-blue{ background:#223b7b;}
+.w-80{ width:80%;}
+
+/*fixed sell button*/
+.body-reletive{ position:relative;}
+#fixed-button{ position:fixed;     top: 50vh; right: 0; width: 30vh;  z-index: 9999;}
+
+.input{ width:100%; padding:10px; margin:5px; border-radius:8px; border:1px solid #D5D5D5;}
+
+/*Home Banner*/
+.search-background img {   width: 100%;}
+.well-searchbox {
+  min-height: 20px;
+  min-width: 480px;
+  padding: 19px;
+  position: absolute;
+  z-index: 0;
+  top: 8%;
+  left: 1%;
+  background: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);}
+
+
+.btn-more{ padding:5px 10px; background:#223b7b; color:#FFFFFF; border-radius:4px;}
+.car-info{ padding:0 10px 10px;}
+.border{ border:1px solid #D5D5D5; border-radius:8px; overflow:hidden;}
+.quick-search{    background: #FFFFFF !important; width: 100%; padding: 10px;border: 1px solid #b3b3b3; border-radius: 7px; margin:0;}
+
+.ad-certified-car{padding: 35px 0;  border: 1px solid #B1B1B1; font-size: 12px;}
+.ad-listing{  padding:0 10px;}
+.padding{ padding-left:50px !important ; padding-top:40px; border: 1px solid #B1B1B1;}
+
+
+
+@media only screen and (max-width: 1199px) {
+	.attr-nav > ul > li > a{font-size: 1.2em !important;    padding: 16px 16px !important;}
+	nav.navbar.bootsnav ul.nav > li > a{    font-size: 1em !important;   padding: 17px 28px !important;}
+	.well-searchbox{ top: 4%;}
+	.ad-certified-car{padding: 26px 0;}
+}
+
+@media only screen and (max-width: 992px) {
+	.attr-nav > ul > li > a{ padding: 13px 16px !important;}
+	nav.navbar.bootsnav ul.nav > li > a{    font-size: 1em !important;   padding: 17px 28px !important;}
+	.quick-search{ padding: 5px;}
+	.btn{    padding: 0.5rem 4rem !important;}
+	.ad-certified-car{ padding: 6px 0;}
+}
+
+
+
+
+#custom_carousel .item {
+
+    color:#000;
+    background-color:#eee;
+    padding:20px 0;
+}
+#custom_carousel .controls{
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding:0;
+    margin:0;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    background:#ddd
+}
+#custom_carousel .controls li {
+    display: table-cell;
+    width: 1%;
+    max-width:90px
+}
+#custom_carousel .controls li.active {
+    background-color:#eee;
+    border-top:3px solid orange;
+}
+#custom_carousel .controls a small {
+    overflow:hidden;
+    display:block;
+    font-size:10px;
+    margin-top:5px;
+    font-weight:bold
+}
+
+
+
+
+*{margin:0;padding: 0 }
+ul{
+    list-style: none;
+}
+.content-slider
+{
+ background-color: #eee;
+}
+.pd0{
+	padding:0; 
+}
+.content-p{
+	font-size: 49px;
+    padding: 100px 80px 0 0px;
+    font-family:  'clanpro', Helvetica, sans-serif ;
+}
+.myshadow{
+    color: #ff0066;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom:30px;
+     font-family:  'clanpro', Helvetica, sans-serif ;
+}
+#carousel-text{
+  padding: 0;  
+}
+.sub-text{
+    width: 74%;
+    font-size: 18px;
+}
+.newslleter{
+    padding-top: 27px;
+    font-size: 20px;
+}
+.nav-transparent{
+	background-color:transparent;
+	border: transparent; 
+}
+.navbar-search{
+	padding:0; 
+}
+.btn-info {
+    color: #fff;
+    background-color: #ff0066;
+    border-color: #ff0066;
+}
+.btn-info:hover,.btn-info:focus,.btn-info:active {
+    background-color: #ff0066;
+    border-color: #ff0066;
+}
+.fg{
+ height: 62px !important;
+}
+
+
+
+.accordian {
+	width: 100%; height: auto;
+	overflow: hidden;
+	
+	/*Time for some styling*/
+	margin: 20px auto 40px;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 1200px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
+
+
+
+
+#custom_carousel .item {
+
+    color:#000;
+    background-color:#eee;
+    padding:20px 0;
+}
+#custom_carousel .controls{
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding:0;
+    margin:0;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    background:#ddd
+}
+#custom_carousel .controls li {
+    display: table-cell;
+    width: 1%;
+    max-width:90px
+}
+#custom_carousel .controls li.active {
+    background-color:#eee;
+    border-top:3px solid orange;
+}
+#custom_carousel .controls a small {
+    overflow:hidden;
+    display:block;
+    font-size:10px;
+    margin-top:5px;
+    font-weight:bold
+}
+
