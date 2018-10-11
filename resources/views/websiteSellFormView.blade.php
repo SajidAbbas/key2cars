@@ -137,7 +137,7 @@
 	</div>
 	</div>
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus felis diam, vulputate in risus eu, porttitor condimentum purus. </p>
+		<p>Post a Free Ad Of Cars, Motorcycles, Farm, Trucks, Buses, Heavy Machinery and Parts. Pakistan's Biggest online automotive Website. </p>
 		<a href="" class="btn btn-footer">Read More</a>
 	</div>
 </div>
@@ -146,12 +146,12 @@
 	<div class="footer-single useful-links">
 	 <div class="footer-title"><h2>Important Links</h2></div>
 	 <ul class="list-unstyled">
-            <li><a href="{{Route('carFeaturedPage')}}">Featured Cars<i class="fa fa-angle-right pull-right"></i></a></li>
-            <li><a href="{{Route('featuredBike')}}">Featured Bikes<i class="fa fa-angle-right pull-right"></i></a></li>
-            <li><a href="{{Route('/accessory')}}">Accessories <i class="fa fa-angle-right pull-right"></i></a></li>
-            <li><a href="">Shops <i class="fa fa-angle-right pull-right"></i></a></li>
-            <li><a href="#">Reviews<i class="fa fa-angle-right pull-right"></i></a></li>
-            <li><a href="{{Route('/trucks')}}">Trucks &amp; Farm <i class="fa fa-angle-right pull-right"></i></a></li>
+            <li><a href="{{Route('carFeaturedPage')}}">Featured Cars</a></li>
+            <li><a href="{{Route('featuredBike')}}">Featured Bikes</a></li>
+            <li><a href="{{Route('/accessory')}}">Accessories </a></li>
+            <li><a href="">Shops </a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="{{Route('/trucks')}}">Trucks &amp; Farm </a></li>
             </ul>
         </div>
 </div>
@@ -161,25 +161,7 @@
 	
 	<div class="col-sm-12 left-clear right-clear footer-single footer-project">
 		<div class="footer-title"><h2>Latest Key2Car Updates</h2></div>
-		<div class="col-xs-4">
-			<!--<img src="http://lorempixel.com/200/200/" class="img-responsive center-block">-->
-		</div>
-		<div class="col-xs-4">
-			 <!--<img src="http://lorempixel.com/200/200/" class="img-responsive center-block">-->
-		</div>
-		<div class="col-xs-4">
-			 <!--<img src="http://lorempixel.com/200/200/" class="img-responsive center-block">-->
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-xs-4">
-			 <!--<img src="http://lorempixel.com/200/200/" class="img-responsive center-block">-->
-		</div>
-		<div class="col-xs-4">
-			 <!--<img src="http://lorempixel.com/200/200/" class="img-responsive center-block">-->
-		</div>
-		<div class="col-xs-4">
-			 <!--<img src="http://lorempixel.com/200/200/" class="img-responsive center-block">-->
-		</div>
+		
 
 	</div>
 
@@ -205,7 +187,7 @@
 <section class="nb-copyright">
 <div class="container">
 <div class="row">
-<div class="col-sm-6 copyrt xs-center">
+<div class="col-sm-6 copyrt xs-center" style="    color: #aaaaaa;">
 	2017 © Key2Cars. All Rights Reserved. <a href="">Terms &amp; Conditions</a> | <a href="">Privacy Policy</a>
 </div>
 <div class="col-sm-6 text-right xs-center">
@@ -249,7 +231,7 @@
 	<a href="">Terms &amp; Conditions</a> | <a href="">Privacy Policy</a>
 </div>
 
-<div class="col-xs-12 copyrt xs-center"  style="border-bottom:1px solid #393939; padding:20px 0; margin:0">
+<div class="col-xs-12 copyrt xs-center"  style="border-bottom:1px solid #393939;  padding:20px 0; margin:0">
 	2017 © Key2Cars. All Rights Reserved. 
 </div>
 

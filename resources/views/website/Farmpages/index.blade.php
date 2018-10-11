@@ -158,8 +158,10 @@ Farm for Sale in Pakistan | Key2Cars
           </select>
         </li>
         <li class="range-widget" style="width:25%;">
-          <div id="pr-range-filter" tabindex="3" class="pos-rel pr-range-large c-form__select"> <span class="pr-text">Price Range</span> <i class="fa pull-right"></i>
-            <div class="pr-range" style="display:none;">
+        <div id="pr-range-filter"  tabindex="3" class="pos-rel pr-range-large ">
+          <span class="pr-text" onclick="myFunction()" style="padding: 10px 45px 11px 0;" >Price Range </span>
+          <i class="fa pull-right"></i>
+          <div class="pr-range" id="myDIV" style="display: none" >
               <div class="pr-range-container ">
                 <div class="pr-input-container clearfix"   >
                   <div class="pr-input">
@@ -1922,12 +1924,16 @@ var condition=[];
      document.getElementById("cars").innerHTML = element;
       });*/
     });
-
-
- 
-    
-  
-
 }
 </script> 
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 @endsection

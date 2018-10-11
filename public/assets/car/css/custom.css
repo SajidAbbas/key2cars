@@ -9495,7 +9495,7 @@ input[type="radio"], input[type="checkbox"] {
 	padding: 6px 10px;
 	font-size: 14px;
 	vertical-align: middle;
-	width: 190px;
+	width: 189px;
 	max-width: 100%;
 	-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
 	-moz-transition: border linear 0.2s, box-shadow linear 0.2s;
