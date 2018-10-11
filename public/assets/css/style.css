@@ -114,7 +114,7 @@ section { }
 .text-warning{}
 .text-danger{}
 .disabled{
-    cursor: not-allowed;
+    cursor: pointer;
 }
 
 /*bacground color*/
@@ -711,7 +711,7 @@ textarea::-ms-input-placeholder{
 #loading-center{
     width: 100%;
     height: 100%;
-    position: relative;
+    position: fixed;
 }
 #loading-center-absolute {
     position: absolute;

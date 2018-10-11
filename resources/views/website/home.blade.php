@@ -145,9 +145,9 @@ Home  | key2cars
             
       <li class="range-widget" style="width:100%; ">
         <div id="pr-range-filter" tabindex="3" class="pos-rel pr-range-large c-form__select" style="border: solid 1px #cccccc;">
-          <span class="pr-text">Price Range</span>
+          <span class="pr-text" onclick="myFunction()" style="padding: 10px 368px 11px 0;">Price Range</span>
           <i class="fa pull-right"></i>
-          <div class="pr-range" style="display:none; z-index:9">
+          <div class="pr-range" id="myDIV" style="display:none; z-index:9">
             <div class="pr-range-container ">
               <div class="pr-input-container clearfix"   >
                 <div class="pr-input">
@@ -952,7 +952,16 @@ Sell my Accessories</a></div>
   </div>
 </div>
 
-
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
 
 
 @endsection

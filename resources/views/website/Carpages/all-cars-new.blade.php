@@ -585,7 +585,7 @@ Car for Sale in Pakistan  | Key2Cars
 <section>
   <div class="container">
     <div class="used-car-search-results">
-      <div class="col-sm-3 hidden-xs"><img src="{{URL::asset('assets/car/images/ad1.png')}}"></div>
+      <div class="col-sm-3 hidden-xs"><img src="{{URL::asset('assets/car/images/ad1OLD.png')}}"></div>
       <div class="col-sm-9 hidden-xs">
         <div id="custom_carousel" class="carousel" data-ride="carousel" data-interval="2500"> 
           <!-- Wrapper for slides -->
