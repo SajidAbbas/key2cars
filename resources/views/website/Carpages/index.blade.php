@@ -360,21 +360,41 @@ Car for Sale in Pakistan|Key2Cars
     <li class="home-chzn" style="width:16.8%;">
       <select class="chzn-select c-form__select_48 pointer" name="capacity_fr" id="capacity_fr" style="width: 48%;">
         <option value="" disabled="disabled">From</option>
-          <option value="600">600 cc</option>
-          <option value="800">800 cc</option>
-          <option value="1000">1,000 cc</option>
-          <option value="1200">1,200 cc</option>
-          <option value="1400">1,400 cc</option>
+          
+                  <option value="600">600 cc</option>
+                  <option value="800">800 cc</option>
+                  <option value="1000">1000 cc</option>
+                  <option value="1200">1200 cc</option>
+                  <option value="1400">1400 cc</option>
+                  <option value="1600">1600 cc</option>
+                  <option value="1800">1800 cc</option>
+                  <option value="2000">2000 cc</option>
+                  <option value="4000">4000 cc</option>
+                  <option value="6000">6000 cc</option>
+                  <option value="8000">8000 cc</option>
+                  <option value="10000">10,000 cc</option>
+                  
+               
       </select>
     </li>
     <li class="home-chzn" style="width:16.5%;">
       <select class="chzn-select c-form__select_48 pointer" name="capacity_to" id="capacity_to" style="width: 48%;" >
           <option value="" disabled="disabled">To</option>
-          <option value="600">600 cc</option>
-          <option value="800">800 cc</option>
-          <option value="1000">1,000 cc</option>
-          <option value="1200">1,200 cc</option>
-          <option value="1400">1,400 cc</option>
+         
+                  <option value="600">600 cc</option>
+                  <option value="800">800 cc</option>
+                  <option value="1000">1000 cc</option>
+                  <option value="1200">1200 cc</option>
+                  <option value="1400">1400 cc</option>
+                  <option value="1600">1600 cc</option>
+                  <option value="1800">1800 cc</option>
+                  <option value="2000">2000 cc</option>
+                  <option value="4000">4000 cc</option>
+                  <option value="6000">6000 cc</option>
+                  <option value="8000">8000 cc</option>
+                  <option value="10000">10,000 cc</option>
+                  
+                
       </select>
     </li>
      <li class="home-chzn" style="width:16.8%;">

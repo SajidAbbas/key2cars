@@ -85,7 +85,7 @@ pw_language = 'English';
 
 @section('content')
 
-<form class="form-horizontal hidden-lg hidden-md hidden-sm" style="text-align: center" id="searchForm" method="post" action="{{Route('/searchAccessory')}}" role="form">
+<form class="form-horizontal hidden-lg hidden-md hidden-sm" style="text-align: center" id="searchForm" method="post" action="{{Route('/searchAccessory')}}#result" role="form">
                       {{ csrf_field() }}
 
         <h2 style="text-align:center;">Find Accessories for Sale in Pakistan</h2>
@@ -146,7 +146,7 @@ pw_language = 'English';
       
 
 <section class="search-main hidden-xs search-form">
-         <form method="post" action="{{Route('/searchAccessory')}}">
+         <form method="post" action="{{Route('/searchAccessory')}}#result">
             {{ csrf_field() }}
              
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">

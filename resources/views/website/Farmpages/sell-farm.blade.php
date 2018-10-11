@@ -220,8 +220,23 @@ Sell Farm | Key2Cars
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label>Engine Capacity</label>
-                    <input name="engine_capacity" min="1" id="engine_capacity" type="number" class="form-control">
-                  </div>
+                   <select name="engine_capacity"  id="engine_capacity" data-placeholder="Engine Capacity" class="form-control select2"  style="width: 100%;">
+                <option selected="selected" disabled="disabled" value=""></option>
+                
+                  <option value="600">600 cc</option>
+                  <option value="800">800 cc</option>
+                  <option value="1000">1000 cc</option>
+                  <option value="1200">1200 cc</option>
+                  <option value="1400">1400 cc</option>
+                  <option value="1600">1600 cc</option>
+                  <option value="1800">1800 cc</option>
+                  <option value="2000">2000 cc</option>
+                  <option value="4000">4000 cc</option>
+                  <option value="6000">6000 cc</option>
+                  <option value="8000">8000 cc</option>
+                  <option value="10000">10,000 cc</option>
+                  
+                </select> </div>
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label>Transmission</label>

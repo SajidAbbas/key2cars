@@ -420,7 +420,7 @@ Home  | key2cars
           </div>
           <div class="col-sm-2 hidden-xs ">
             <div class="features_item ad-certified-car bg-white">
-              <a href="#" class="text-center"> <img class="img-responsive center-block" src="{{ URL::asset('assets/images/key2cars-certified.png')}}"><br>
+              <a href="{{route('carCertfiedPage')}}" class="text-center"> <img class="img-responsive center-block" src="{{ URL::asset('assets/images/key2cars-certified.png')}}"><br>
                <p class="text-center"> View Certified Cars </p></a>
             </div>
           </div>

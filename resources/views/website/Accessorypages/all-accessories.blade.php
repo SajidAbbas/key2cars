@@ -857,7 +857,7 @@ Accessories for Sale in Pakistan |Key2Cars
             document.getElementById('p_l').style.display='block';
         }  
         
-        window.location.href="#accessory";
+        window.location.href="#result";
       });
 
 

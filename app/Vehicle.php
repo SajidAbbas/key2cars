@@ -554,7 +554,7 @@ class Vehicle extends Model
       ->orderBy('vehicles.featured',1)
       ->orderBy('vehicles.updated_at','desc');
 
-       return $query->paginate(2);
+       return $query->paginate(15);
 
     }
     
